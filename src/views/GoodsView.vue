@@ -55,5 +55,17 @@ import ProductCard from '@/components/ProductCard.vue';
 
 export default {
   components: { ProductCard, NavBarComponent },
+  data() {
+    return {
+      productCards: [
+        {
+          id: 0,
+          icon: 'coffee-1.jpg',
+          title: 'Solimo Coffee Beans 2kg',
+          price: '10.73',
+        },
+      ],
+    };
+  },
 };
 </script>

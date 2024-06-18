@@ -65,5 +65,17 @@ export default {
     NavBarComponent,
     ProductCard,
   },
+  data() {
+    return {
+      productCards: [
+        {
+          id: 0,
+          icon: 'coffee-1.jpg',
+          title: 'Solimo Coffee Beans 2kg',
+          price: '10.73',
+        },
+      ],
+    };
+  },
 };
 </script>

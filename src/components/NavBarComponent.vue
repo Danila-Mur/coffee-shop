@@ -18,4 +18,34 @@
     </ul>
   </header>
 </template>
-<script setup lang="ts"></script>
+
+<script>
+export default {
+  data() {
+    return {
+      links: [
+        {
+          id: 0,
+          link: '/',
+          icon: 'Logo.svg',
+        },
+        {
+          id: 1,
+          text: 'Our coffee',
+          link: '/our-coffee',
+        },
+        {
+          id: 2,
+          text: 'For your pleasure',
+          link: '/goods',
+        },
+        {
+          id: 3,
+          text: 'Contact us',
+          link: '/contacts',
+        },
+      ],
+    };
+  },
+};
+</script>
