@@ -7,7 +7,7 @@
             <NavBarComponent />
           </div>
         </div>
-        <h1 class="title-big">For your pleasure</h1>
+        <TitleComponent title="For your pleasure" />
       </div>
     </div>
     <section class="shop">
@@ -36,12 +36,12 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
+              <ProductCard
+                classItem="shop__item"
+                :name="goods[0].name"
+                :price="goods[0].price"
+                :image="goods[0].image"
+              />
             </div>
           </div>
         </div>
@@ -52,17 +52,18 @@
 <script>
 import NavBarComponent from '@/components/NavBarComponent.vue';
 import ProductCard from '@/components/ProductCard.vue';
+import TitleComponent from '@/components/TitleComponent.vue';
 
 export default {
-  components: { ProductCard, NavBarComponent },
+  components: { TitleComponent, ProductCard, NavBarComponent },
   data() {
     return {
-      productCards: [
+      goods: [
         {
           id: 0,
-          icon: 'coffee-1.jpg',
-          title: 'Solimo Coffee Beans 2kg',
-          price: '10.73',
+          image: 'coffee-1.jpg',
+          name: 'Solimo Coffee Beans 2kg',
+          price: 10.73,
         },
       ],
     };

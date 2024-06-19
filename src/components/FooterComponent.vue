@@ -34,7 +34,7 @@ export default {
         {
           id: 0,
           link: '/',
-          icon: 'Logo.svg',
+          icon: 'Logo_black.svg',
         },
         {
           id: 1,

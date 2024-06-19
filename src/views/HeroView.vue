@@ -9,11 +9,11 @@
         </div>
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
-            <h1 class="title-big">Everything You Love About Coffee</h1>
+            <TitleComponent title="Everything You Love About Coffee" />
             <img class="beanslogo" src="@/assets/logo/Beans_logo.svg" alt="Beans logo" />
             <div class="preview__subtitle">We makes every day full of energy and taste</div>
             <div class="preview__subtitle">Want to try our beans?</div>
-            <a href="./coffeepage.html" class="preview__btn">More</a>
+            <router-link to="/our-coffee" class="preview__btn">More</router-link>
           </div>
         </div>
       </div>
@@ -45,9 +45,24 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
+              <ProductCard
+                classItem="best__item"
+                :name="bestsellers[0].name"
+                :price="bestsellers[0].price"
+                :image="bestsellers[0].image"
+              />
+              <ProductCard
+                classItem="best__item"
+                :name="bestsellers[1].name"
+                :price="bestsellers[1].price"
+                :image="bestsellers[1].image"
+              />
+              <ProductCard
+                classItem="best__item"
+                :name="bestsellers[1].name"
+                :price="bestsellers[1].price"
+                :image="bestsellers[1].image"
+              />
             </div>
           </div>
         </div>
@@ -59,20 +74,28 @@
 <script>
 import NavBarComponent from '@/components/NavBarComponent.vue';
 import ProductCard from '@/components/ProductCard.vue';
+import TitleComponent from '@/components/TitleComponent.vue';
 
 export default {
   components: {
+    TitleComponent,
     NavBarComponent,
     ProductCard,
   },
   data() {
     return {
-      productCards: [
+      bestsellers: [
         {
           id: 0,
-          icon: 'coffee-1.jpg',
-          title: 'Solimo Coffee Beans 2kg',
-          price: '10.73',
+          image: 'coffee-1.jpg',
+          name: 'Solimo Coffee Beans 2kg',
+          price: 10.73,
+        },
+        {
+          id: 1,
+          image: 'coffee-2.jpg',
+          name: 'Solimo Coffee Beans 10kg',
+          price: 9.4,
         },
       ],
     };
