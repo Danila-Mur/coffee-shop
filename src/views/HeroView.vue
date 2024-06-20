@@ -13,7 +13,7 @@
             <img class="beanslogo" src="@/assets/logo/Beans_logo.svg" alt="Beans logo" />
             <div class="preview__subtitle">We makes every day full of energy and taste</div>
             <div class="preview__subtitle">Want to try our beans?</div>
-            <router-link to="/our-coffee" class="preview__btn">More</router-link>
+            <a @click.prevent="smoothScroll" href="/our-coffee" class="preview__btn">More</a>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
         </div>
       </div>
     </section>
-    <section class="best">
+    <section class="best" id="best" ref="best">
       <div class="container">
         <div class="title">Our best</div>
         <div class="row">
@@ -65,6 +65,8 @@
 import NavBarComponent from '@/components/NavBarComponent.vue';
 import ProductCard from '@/components/ProductCard.vue';
 import TitleComponent from '@/components/TitleComponent.vue';
+
+import { scrollIntoView } from 'seamless-scroll-polyfill';
 
 export default {
   components: {
@@ -96,5 +98,11 @@ export default {
       ],
     };
   },
+  methods: {
+    smoothScroll() {
+      scrollIntoView(this.$refs.best, { behavior: 'smooth', block: 'start' });
+    },
+  },
+  mounted() {},
 };
 </script>
