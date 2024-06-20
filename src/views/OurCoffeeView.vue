@@ -53,22 +53,12 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
               <ProductCard
+                v-for="coffeeItem in coffee"
+                :key="coffeeItem.id"
                 classItem="shop__item"
-                :name="coffee[0].name"
-                :price="coffee[0].price"
-                :image="coffee[0].image"
-              />
-              <ProductCard
-                classItem="shop__item"
-                :name="coffee[0].name"
-                :price="coffee[0].price"
-                :image="coffee[0].image"
-              />
-              <ProductCard
-                classItem="shop__item"
-                :name="coffee[0].name"
-                :price="coffee[0].price"
-                :image="coffee[0].image"
+                :name="coffeeItem.name"
+                :price="coffeeItem.price"
+                :image="coffeeItem.image"
               />
             </div>
           </div>
@@ -97,6 +87,30 @@ export default {
           image: 'coffee-1.jpg',
           name: 'Solimo Coffee Beans 2kg',
           price: 10.73,
+        },
+        {
+          id: 1,
+          image: 'coffee-1.jpg',
+          name: 'Solimo Coffee Beans 2kg',
+          price: 10.73,
+        },
+        {
+          id: 2,
+          image: 'coffee-2.jpg',
+          name: 'Presto Coffee Beans 1kg',
+          price: 15.99,
+        },
+        {
+          id: 3,
+          image: 'coffee-3.jpg',
+          name: 'AROMISTICO Coffee 1kg',
+          price: 6.99,
+        },
+        {
+          id: 4,
+          image: 'coffee-3.jpg',
+          name: 'AROMISTICO Coffee 1kg',
+          price: 6.99,
         },
       ],
     };

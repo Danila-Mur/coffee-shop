@@ -37,10 +37,12 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
               <ProductCard
+                v-for="goodItem in goods"
+                :key="goodItem.id"
                 classItem="shop__item"
-                :name="goods[0].name"
-                :price="goods[0].price"
-                :image="goods[0].image"
+                :name="goodItem.name"
+                :price="goodItem.price"
+                :image="goodItem.image"
               />
             </div>
           </div>
@@ -61,9 +63,33 @@ export default {
       goods: [
         {
           id: 0,
-          image: 'coffee-1.jpg',
+          image: 'good-1.jpg',
           name: 'Solimo Coffee Beans 2kg',
           price: 10.73,
+        },
+        {
+          id: 1,
+          image: 'good-1.jpg',
+          name: 'Solimo Coffee Beans 2kg',
+          price: 10.73,
+        },
+        {
+          id: 2,
+          image: 'good-1.jpg',
+          name: 'Presto Coffee Beans 1kg',
+          price: 15.99,
+        },
+        {
+          id: 3,
+          image: 'good-1.jpg',
+          name: 'AROMISTICO Coffee 1kg',
+          price: 6.99,
+        },
+        {
+          id: 4,
+          image: 'good-1.jpg',
+          name: 'AROMISTICO Coffee 1kg',
+          price: 6.99,
         },
       ],
     };

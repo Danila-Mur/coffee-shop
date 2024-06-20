@@ -46,22 +46,12 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
               <ProductCard
+                v-for="card in bestsellers"
+                :key="card.id"
                 classItem="best__item"
-                :name="bestsellers[0].name"
-                :price="bestsellers[0].price"
-                :image="bestsellers[0].image"
-              />
-              <ProductCard
-                classItem="best__item"
-                :name="bestsellers[1].name"
-                :price="bestsellers[1].price"
-                :image="bestsellers[1].image"
-              />
-              <ProductCard
-                classItem="best__item"
-                :name="bestsellers[1].name"
-                :price="bestsellers[1].price"
-                :image="bestsellers[1].image"
+                :name="card.name"
+                :price="card.price"
+                :image="card.image"
               />
             </div>
           </div>
@@ -94,8 +84,14 @@ export default {
         {
           id: 1,
           image: 'coffee-2.jpg',
-          name: 'Solimo Coffee Beans 10kg',
-          price: 9.4,
+          name: 'Presto Coffee Beans 1kg',
+          price: 15.99,
+        },
+        {
+          id: 1,
+          image: 'coffee-3.jpg',
+          name: 'AROMISTICO Coffee 1kg',
+          price: 6.99,
         },
       ],
     };
