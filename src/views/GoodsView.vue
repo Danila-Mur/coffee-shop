@@ -58,41 +58,10 @@ import TitleComponent from '@/components/TitleComponent.vue';
 
 export default {
   components: { TitleComponent, ProductCard, NavBarComponent },
-  data() {
-    return {
-      goods: [
-        {
-          id: 0,
-          image: 'good-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73,
-        },
-        {
-          id: 1,
-          image: 'good-1.jpg',
-          name: 'Solimo Coffee Beans 2kg',
-          price: 10.73,
-        },
-        {
-          id: 2,
-          image: 'good-1.jpg',
-          name: 'Presto Coffee Beans 1kg',
-          price: 15.99,
-        },
-        {
-          id: 3,
-          image: 'good-1.jpg',
-          name: 'AROMISTICO Coffee 1kg',
-          price: 6.99,
-        },
-        {
-          id: 4,
-          image: 'good-1.jpg',
-          name: 'AROMISTICO Coffee 1kg',
-          price: 6.99,
-        },
-      ],
-    };
+  computed: {
+    goods() {
+      return this.$store.getters['getGoods'];
+    },
   },
 };
 </script>

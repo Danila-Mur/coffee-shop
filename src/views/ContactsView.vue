@@ -65,7 +65,7 @@
                     id="message"
                     rows="5"
                     placeholder="Leave your comments here"
-                    v-model="form.textarea"
+                    v-model="form.message"
                   ></textarea>
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default {
         name: '',
         email: '',
         phone: '',
-        textarea: '',
+        message: '',
       },
     };
   },
