@@ -95,6 +95,16 @@ const products = {
     getGoods(state) {
       return state.goods;
     },
+    getCoffeeById(state) {
+      return (id) => {
+        return state.coffee.find((card) => card.id === +id);
+      };
+    },
+    getGoodsById(state) {
+      return (id) => {
+        return state.goods.find((card) => card.id === +id);
+      };
+    },
   },
 };
 

@@ -6,6 +6,7 @@ import OurCoffeeView from '@/views/OurCoffeeView.vue';
 import GoodsView from '@/views/GoodsView.vue';
 import ContactsView from '@/views/ContactsView.vue';
 import ThanksView from '@/views/ThanksView.vue';
+import GoodsItemView from '@/views/GoodsItemView.vue';
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,16 @@ const routes = [
   {
     path: '/thanks',
     component: ThanksView,
+  },
+  {
+    name: 'coffee',
+    path: '/our-coffee/:id',
+    component: GoodsItemView,
+  },
+  {
+    name: 'goods',
+    path: '/goods/:id',
+    component: GoodsItemView,
   },
 ];
 
