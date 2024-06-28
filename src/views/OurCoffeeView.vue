@@ -52,13 +52,7 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <ProductCard
-                v-for="coffeeItem in coffee"
-                :key="coffeeItem.id"
-                classItem="shop__item"
-                :card="coffeeItem"
-                @onNavigate="navigate"
-              />
+              <ProductCard v-for="coffeeItem in coffee" :key="coffeeItem.id" classItem="shop__item" :card="coffeeItem" @onNavigate="navigate" />
             </div>
           </div>
         </div>
@@ -91,5 +85,10 @@ export default {
     };
   },
   mixins: [navigate],
+  mounted() {
+    fetch('http://localhost:3000/coffee')
+      .then((res) => res.json())
+      .then((data) => this.$store.dispatch('setCoffeeData', data));
+  },
 };
 </script>
